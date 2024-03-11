@@ -9,8 +9,6 @@
 #include "Client.h"
 #include "CmdForServer.h"
 
-
-
 #pragma comment(lib, "ws2_32.lib")
 
 Client* Client::instance = NULL;
@@ -29,7 +27,7 @@ Client::Client() {
 
 	if (r) throw Erreur("L'initialisation a ¨¦chouer);");
 
-	cout << "client vers le serveur de majuscule" << endl;
+	cout << "On va commencer :" << endl;
 	cout << "initialisation effectu¨¦" << endl;
 
 	//---------------------- cr¨¦ation socket -------------------------------------------------

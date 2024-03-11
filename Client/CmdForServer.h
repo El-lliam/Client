@@ -1,6 +1,6 @@
 #pragma once
-#define ADDRESS "127.0.0.1" // Adresse IP du serveur
-#define PORT 8080   // port de liaison
+#define ADDRESS "127.0.0.1"
+#define PORT 8080
 #define MSGEND "\n"
 
 #define CMD_QUIT "quit"

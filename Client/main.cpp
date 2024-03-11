@@ -84,32 +84,33 @@ int main()
 	{
 		GeomCompos g;
 
+		GeomLine* line = new GeomLine(100, 100, 300, 100);
+		line->setColor(96, 96, 96);
+		g.add(line);
 
-		GeomCircle* c = new GeomCircle(200, 200, 100); //Créer un cercle avec un milieu de 200 200 et un rayon de 100
-		c->setColor(0, 125, 200); //définir la valeur RGB
-		g.add(c); //Mettre dans le graphique global
+		vector<int> points = { 100,100, 100,196, 244,196 ,244,100,};
+		GeomPolygone* polygone = new GeomPolygone(points);
+		polygone->setColor(178,102,255);
+		g.add(polygone);
 
-		GeomLine* line = new GeomLine(0, 0, 400, 200); //Créer un segment de ligne du point final 0 0 au point final 400 400
-		line->setColor(200, 125, 200); //définir la valeur RGB
-		g.add(line); //Mettre dans le graphique global
+		GeomCircle* c = new GeomCircle(222, 148, 20);
+		c->setColor(0, 204, 0);
+		g.add(c);
 
-		vector<int> points = { 50,50, 75,25, 100,50, 100,100 ,50,100 };// L'ensemble des sommets d'un polygone x1 y1 x2 y2  …
-		GeomPolygone* pl = new GeomPolygone(points); //Créer un polygone à partir de cette collection
-		pl->setColor(0, 0, 200); //définir la valeur RGB
-		g.add(pl); //Mettre dans le graphique global
+		Vector2d move = Vector2d(25, 50);
+		g.moveBy(move);
 
-		Vector2d move = Vector2d(25, 50); //traduire ce vecteur
-		g.moveBy(move); //Traduire tous les graphiques en vecteur de move
+		Point pivot = Point(75, 75);
+		g.rotateBy(&pivot, 0.4);
 
-		Point pivot = Point(75, 75);//centre de rotation
-		g.rotateBy(&pivot, 0.3);//Faites pivoter 1 radian autour du pivot, notez que les radians ne sont pas des angles
+		g.zoomBy(&pivot, 0.9);
 
-		g.zoomBy(&pivot, 0.5);//Centré sur le pivot, le graphique devient 0,5 fois la taille d'origine
-		cout << "surface is:" << g.surface() << endl;
-		g.setColor(0, 255, 0);//Tous les graphiques deviennent rouges
-		save(&g, "saved_data.txt");//enregistrer tous les graphiques dans un fichier
+		cout << "La surface est :" << g.surface() << endl;
 
-		//load(&g, "saved_data.txt");//Lire le graphique enregistré en g
+		g.setColor(51,153,255);
+
+		save(&g, "saved_data.txt");
+		//load(&g, "saved_data.txt");
 
 		//visitor
 		TCP_visitor tcpv;
@@ -120,9 +121,6 @@ int main()
 	{
 		cerr << erreur << endl;
 	}
-
-
-
 	return 0;
 
 }

@@ -7,7 +7,9 @@
 class Visitor;
 class GeomCircle : public GeomSimple
 {
-	/* Un cercle dans des graphiques simples, comprenant un centre et un rayon
+	/* Un cercle dans des graphiques simples, comprenant 
+		un centre 
+		un rayon
 	*/
 public:
 	GeomCircle(int x, int y, int r);

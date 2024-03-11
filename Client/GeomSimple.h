@@ -8,8 +8,7 @@ using namespace std;
 class Visitor;
 class GeomSimple : public Geometric
 {
-	/* Les graphiques simples, par opposition aux graphiques hybrides GeomCompos, les graphiques simples sont de vrais graphiques, tels que des cercles, des triangles, des polygones, des lignes, etc.
-	* Ils héritent tous de cette classe, les opérations de move, de rotate et de zoom agissent directement sur tous ses sommets
+	/* Les graphiques simples sont circles, triangle, polygones,droite...avec heritage de cette classe, peuvent zoomer, rotater, move
 	*/
 public:
 	virtual ~GeomSimple()
@@ -36,14 +35,14 @@ public:
 			p->rotateBy(pivot, radian);
 		}
 	}
-	virtual void zoomBy(Point* pivot, float factor)//Zoom avant ou arrière pour tous les points
+	virtual void zoomBy(Point* pivot, float factor)//Zoom avant ou arriere pour tous les points
 	{
 		for (Point* p : points) {
 			p->zoomBy(pivot, factor);
 		}
 	}
 
-	virtual void addPoint(Point* p)//Ajouter un sommet supplémentaire au polygone
+	virtual void addPoint(Point* p)//Ajouter un sommet supplementaire au polygone
 	{
 		points.push_back(p);
 	}
@@ -51,14 +50,14 @@ public:
 	virtual float surface() = 0;
 
 
-	virtual void setColor(int rr, int gg, int bb) {	//Utilisez la méthode de réglage des couleurs RGB pour définir la couleur initiale du graphique.
+	virtual void setColor(int rr, int gg, int bb) {	//Utilisez la methode RGB pour definir la couleur initiale du graphique.
 		r = rr;
 		g = gg;
 		b = bb;
 	}
 
 protected:
-	vector<Point*> points; //L'ensemble des sommets des graphiques simples, le sommet d'un cercle est le centre du cercle, la ligne est les deux extrémités, etc.
+	vector<Point*> points; //L'ensemble des sommets des graphiques simples, le sommet d'un cercle est le centre du cercle, la ligne est les deux points, etc.
 	int r = 0;
 	int g = 0;
 	int b = 0;

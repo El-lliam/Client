@@ -90,9 +90,6 @@ inline /*static*/ void Erreur::testeNonVide(const void* d, const char* message)
 	if (!d) throw Erreur(message);
 #endif
 }
-
-
-
 #endif
 
 

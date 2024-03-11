@@ -15,7 +15,7 @@ public:
 
 	explicit Vector2d(float x = 0, float y = 0) :x(x), y(y) {}
 
-	/* ?la place de string on peut mettre n'importe quel type
+	/* A la place de string on peut mettre n'importe quel type
 	permet de faire un "cast" en string */
 	operator string () const
 	{
@@ -29,16 +29,13 @@ public:
 	{
 		return Vector2d(this->x + v.x, this->y + v.y);
 	}
-	// v7 = v1.operator + ( v2)
 
-// v5 = v1.operator*(5);
 
 	const Vector2d operator *(const float& a) const
 	{
 		return Vector2d(this->x * a, this->y * a);
 	}
 
-	// v4 = v1.operator-()
 
 	const Vector2d operator-()
 	{
@@ -55,10 +52,8 @@ public:
 
 inline ostream& operator << (ostream& os, const Vector2d& v)
 {
-	return os << (string)v; // appelle la méthode : v.operator string
+	return os << (string)v; 
 }
-
-//v8 = operator*(2.5,v1);
 
 inline Vector2d operator *(const float& a, const Vector2d& v)
 {

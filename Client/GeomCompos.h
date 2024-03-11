@@ -5,10 +5,13 @@
 using namespace std;
 class Visitor;
 class GeomCompos : public Geometric
-{	
+{	/*
+		Graphiques mixtes
+		Appliquer pour tout pour la rotation et zoom
+	*/
 public:
 	virtual ~GeomCompos();
-	virtual void accept(Visitor* v);
+	virtual void accept(Visitor* v);//
 	virtual void add(Geometric* g);
 	virtual void moveBy(Vector2d& v);
 	virtual void rotateBy(Point* pivot, float radian);

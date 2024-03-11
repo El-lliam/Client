@@ -41,7 +41,7 @@ public:
 
 	void zoomBy(Point* pivot, float factor) {
 		Vector2d v = pivot->vectorTo(this) * factor;//Zoom avant/arri¨¨re sur le vecteur form?par le pivot et le point courant
-		x = pivot->x + v.x;//Le rôle des deux fonctions ci-dessus est de compléter la rotation des graphiques
+		x = pivot->x + v.x;//Faire la rotation des graphiques
 		y = pivot->y + v.y;//Si tous les points d'un graphique ont subi des changements correspondants, alors le graphique entier a subi des changements correspondants
 	}
 };

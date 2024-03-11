@@ -11,9 +11,12 @@ public:
 	GeomPolygone(vector<int>& v);
 	virtual string toString();
 	virtual void accept(Visitor* v);
-	virtual float surface() { //Calculer la superficie
-		// S = 1/2 * [(x1y2-x2y1)+(x2y3-x3y2)+(x3y1-x1y3)]
-		if (points.size() < 3)//Une figure avec plus de trois sommets a une aire, mais il faut noter que les trois points ne peuvent pas être sur la même droite
+	virtual float surface() { 
+		/*Calculer la superficie
+		 S = 1/2 * [(x1y2-x2y1)+(x2y3-x3y2)+(x3y1-x1y3)]
+		Une figure avec plus de trois sommets a une aire,les trois points ne peuvent pas etre sur la meme ligne
+		*/
+		if (points.size() < 3)
 			return 0;
 		float res = 0;
 		Point* first = points[0];//Obtenir les coordonnes du premier point

@@ -26,7 +26,7 @@ void GeomCompos::rotateBy(Point* pivot, float radian) {//Faire tourner
 		g->rotateBy(pivot, radian);
 	}
 }
-void GeomCompos::zoomBy(Point* pivot, float factor) {//zoomer ou dézoomer
+void GeomCompos::zoomBy(Point* pivot, float factor) {//zoomer ou dezoomer
 	for (Geometric* g : geoms) {
 		g->zoomBy(pivot, factor);
 	}

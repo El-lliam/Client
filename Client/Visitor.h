@@ -3,7 +3,7 @@
 #include "GeomCircle.h"
 #include "GeomPolygone.h"
 #include "GeomLine.h"
-class Visitor
+	class Visitor
 {
 	/* Classe mère du mode visiteur, le mode visiteur permet de découpler le contenu graphique (forme, taille, sommet, longueur des côtés, etc.)
 	Pour tout code lié au graphisme, il suffit de changer le visiteur correspondant.
